@@ -37,11 +37,11 @@
 
 ---
 
-## Донор (в git не кладётся)
+## Донор (в git не кладётся) ru🚚er or 4pda
 
 | Файл | SHA-256 |
 |---|---|
-| `SHADOWGUN_1.7.0_PowerVR_RU_MOD_sign.apk` | `aa8e1863d90de72ea0fd80fdee748e6f37695cfd2703a9295da14a523c3caada` ru🚚er or 4pda|
+| `SHADOWGUN_1.7.0_PowerVR_RU_MOD_sign.apk` | `aa8e1863d90de72ea0fd80fdee748e6f37695cfd2703a9295da14a523c3caada` |
 | OBB `main.170300014.com.madfingergames.shadowgun.obb` | `a61516f5a0fe2b138ebcfd88ad9b065c53f6426775c4f14e16e6d3de6f9766e3` |
 
 - Пакет: `com.madfingergames.shadowgun`, versionCode **170300014**
