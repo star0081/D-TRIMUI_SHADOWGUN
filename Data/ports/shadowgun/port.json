@@ -1,0 +1,43 @@
+{
+    "version": 4,
+    "name": "shadowgun.zip",
+    "items": [
+        "Shadowgun.sh",
+        "shadowgun"
+    ],
+    "items_opt": [],
+    "attr": {
+        "title": "Shadowgun",
+        "porter": [
+            "star0081 (TrimUI Smart Pro)"
+        ],
+        "desc": "Unity 5.3.8 IL2CPP Android port of Shadowgun 1.7.0 (PowerVR) for TrimUI Smart Pro 1.1.1 PortMaster. Original Madfinger game files are not included.",
+        "desc_md": null,
+        "inst": "Copy the 1.7.0 PowerVR APK and main.170300014.com.madfingergames.shadowgun.obb into Data/ports/shadowgun/gamedata, run setup.sh on a PC, then launch.",
+        "inst_md": null,
+        "genres": [
+            "action",
+            "shooter"
+        ],
+        "image": {},
+        "rtr": false,
+        "exp": true,
+        "runtime": null,
+        "store": [],
+        "availability": "paid",
+        "reqs": [
+            "opengl",
+            "analog_2"
+        ],
+        "arch": [
+            "aarch64",
+            "armhf"
+        ],
+        "min_glibc": ""
+    },
+    "status": {
+        "source": "https://github.com/star0081",
+        "md5": null,
+        "status": "WIP"
+    }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gameList>
+  <game>
+    <path>./Shadowgun.sh</path>
+    <name>Shadowgun</name>
+    <desc>Port of the 2011 Madfinger third-person shooter (Unity 5.3.8 PowerVR rebuild). Original game files are required.</desc>
+    <releasedate>20111026T000000</releasedate>
+    <developer>Madfinger Games</developer>
+    <publisher>Madfinger Games</publisher>
+    <genre>Action</genre>
+  </game>
+</gameList>

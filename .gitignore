@@ -1,0 +1,25 @@
+# Madfinger game files — never commit
+*.apk
+*.obb
+*.log
+*.so.bak
+
+/ORIG\ GAME/
+/_inspect/
+/BUILD\ 76/
+
+Data/ports/shadowgun/gamedata/**
+!Data/ports/shadowgun/gamedata/README.txt
+!Data/ports/shadowgun/gamedata/*.sha256.txt
+Data/ports/shadowgun/gamefiles/android-libs/
+Data/ports/shadowgun/gamefiles/.ready-*
+Data/ports/shadowgun/assets/
+Data/ports/shadowgun/logs/
+Data/ports/shadowgun/cache/
+Data/ports/shadowgun/files/
+Data/ports/shadowgun/Android/
+Data/ports/shadowgun/prefs.txt
+Data/ports/shadowgun/host-libs/libLLVM*
+Data/ports/shadowgun/host-libs/dri/
+**/.DS_Store
+*.tmp
