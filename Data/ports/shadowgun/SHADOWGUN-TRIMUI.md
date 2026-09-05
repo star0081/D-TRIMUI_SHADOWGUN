@@ -41,7 +41,7 @@
 
 | Файл | SHA-256 |
 |---|---|
-| `SHADOWGUN_1.7.0_PowerVR_RU_MOD_sign.apk` | `aa8e1863d90de72ea0fd80fdee748e6f37695cfd2703a9295da14a523c3caada` |
+| `SHADOWGUN_1.7.0_PowerVR_RU_MOD_sign.apk` | `aa8e1863d90de72ea0fd80fdee748e6f37695cfd2703a9295da14a523c3caada` ru🚚er or 4pda|
 | OBB `main.170300014.com.madfingergames.shadowgun.obb` | `a61516f5a0fe2b138ebcfd88ad9b065c53f6426775c4f14e16e6d3de6f9766e3` |
 
 - Пакет: `com.madfingergames.shadowgun`, versionCode **170300014**
@@ -51,8 +51,6 @@
 ---
 
 ## Архитектура
-
-Как NFS MW (не как Dead Space fixed-function):
 
 1. 32-bit процесс через свой `armhf` (`ld-linux-armhf.so.3`)
 2. **glbridge**: 32-bit `libEGL`/`libGLESv2` → unix socket + mmap → 64-bit `shadowgun_present` (SDL GLES 3.0 на PowerVR)
@@ -68,7 +66,7 @@
 
 ### Запуск и стабильность
 
-- ELF32-лоадер + Bionic-compat из линии NFS MW
+- ELF32-лоадер + Bionic-compat
 - Unity lifecycle: `JNI_OnLoad` → `initJni` → `nativeFile` → gfx → `nativeRender`
 - OBB path, лицензия-заглушка, отказ от `libHellCPU.so`
 - FMOD / аудио без GL-окна у 32-bit процесса
@@ -194,4 +192,3 @@ powershell -File Data/ports/shadowgun/src/build.ps1
 - Лаунчеры — POSIX `sh`, только **LF**  
 - FAT32 — без симлинков (дубли `.so` файлами)  
 - Игру / APK / OBB / game `.so` в git не класть  
-- Коммиты: автор **star0081**, без Co-authored-by Cursor  
