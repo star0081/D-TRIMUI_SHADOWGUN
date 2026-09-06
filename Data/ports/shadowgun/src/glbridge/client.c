@@ -2144,14 +2144,32 @@ void *eglGetCurrentDisplay(void)
 
 unsigned eglQuerySurface(void *dpy, void *surf, int attr, int *value)
 {
+    const char *configured;
+    int width = 1280;
+    int height = 720;
+
     (void)dpy;
     (void)surf;
     if (!value)
         return 0;
+    configured = getenv("NFSMW_WIDTH");
+    if (configured == NULL || configured[0] == '\0')
+        configured = getenv("TSPGL_WIDTH");
+    if (configured != NULL && configured[0] != '\0')
+        width = atoi(configured);
+    configured = getenv("NFSMW_HEIGHT");
+    if (configured == NULL || configured[0] == '\0')
+        configured = getenv("TSPGL_HEIGHT");
+    if (configured != NULL && configured[0] != '\0')
+        height = atoi(configured);
+    if (width < 160)
+        width = 160;
+    if (height < 120)
+        height = 120;
     if (attr == EGL_WIDTH)
-        *value = 640;
+        *value = width;
     else if (attr == EGL_HEIGHT)
-        *value = 480;
+        *value = height;
     else
         *value = 0;
     return 1;

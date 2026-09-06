@@ -47,10 +47,27 @@ struct tspgl_shared *tspgl_shared(void)
                 X->sock = -1;
                 X->pid = pid;
                 X->unpack_align = 4;
-                X->st_viewport[2] = 640;
-                X->st_viewport[3] = 480;
-                X->st_scissor[2] = 640;
-                X->st_scissor[3] = 480;
+                X->st_viewport[2] = 1280;
+                X->st_viewport[3] = 720;
+                X->st_scissor[2] = 1280;
+                X->st_scissor[3] = 720;
+                {
+                    const char *ew = getenv("NFSMW_WIDTH");
+                    const char *eh = getenv("NFSMW_HEIGHT");
+                    int width;
+                    int height;
+
+                    if (ew == NULL || ew[0] == '\0')
+                        ew = getenv("TSPGL_WIDTH");
+                    if (eh == NULL || eh[0] == '\0')
+                        eh = getenv("TSPGL_HEIGHT");
+                    width = ew != NULL && ew[0] != '\0' ? atoi(ew) : 1280;
+                    height = eh != NULL && eh[0] != '\0' ? atoi(eh) : 720;
+                    if (width >= 160)
+                        X->st_viewport[2] = X->st_scissor[2] = width;
+                    if (height >= 120)
+                        X->st_viewport[3] = X->st_scissor[3] = height;
+                }
                 X->magic = XPORT_MAGIC;
                 fprintf(stderr, "tspgl: shared xport pid=%d\n", (int)pid);
             }

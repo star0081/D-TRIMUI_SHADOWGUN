@@ -92,8 +92,9 @@ echo "----- tsp-glbridge server -----" >> "$LOG"
   export SDL_GAMECONTROLLERCONFIG_FILE="$PM/gamecontrollerdb.txt"
   export XDG_RUNTIME_DIR=/tmp
   export TMPDIR=/tmp
-  export TSPGL_WIDTH="${TSPGL_WIDTH:-640}"
-  export TSPGL_HEIGHT="${TSPGL_HEIGHT:-480}"
+  export TSPGL_WIDTH="${TSPGL_WIDTH:-1280}"
+  export TSPGL_HEIGHT="${TSPGL_HEIGHT:-720}"
+  export TSPGL_PRESENT="${TSPGL_PRESENT:-stretch}"
   if command -v setsid >/dev/null 2>&1; then
     exec setsid "$GAMEDIR/shadowgun_present"
   else
@@ -123,8 +124,9 @@ export SDL_GAMECONTROLLERCONFIG_FILE="$PM/gamecontrollerdb.txt"
 export SDL_NO_SIGNAL_HANDLERS=1
 export SDL_JOYSTICK_ALLOW_BACKGROUND_EVENTS=1
 export MALLOC_ARENA_MAX=2
-export NFSMW_WIDTH="${TSPGL_WIDTH:-640}"
-export NFSMW_HEIGHT="${TSPGL_HEIGHT:-480}"
+export NFSMW_WIDTH="${TSPGL_WIDTH:-1280}"
+export NFSMW_HEIGHT="${TSPGL_HEIGHT:-720}"
+export TSPGL_PRESENT="${TSPGL_PRESENT:-stretch}"
 export SG_ROOT="$GAMEDIR"
 export SG_PACKAGE="$PKG"
 export SG_APK="$APK"

@@ -194,4 +194,3 @@ powershell -File Data/ports/shadowgun/src/build.ps1
 - Лаунчеры — POSIX `sh`, только **LF**  
 - FAT32 — без симлинков (дубли `.so` файлами)  
 - Игру / APK / OBB / game `.so` в git не класть  
-- Коммиты: автор **star0081**, без Co-authored-by Cursor  

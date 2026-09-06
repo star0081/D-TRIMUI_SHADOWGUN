@@ -23,3 +23,7 @@ Data/ports/shadowgun/host-libs/libLLVM*
 Data/ports/shadowgun/host-libs/dri/
 **/.DS_Store
 *.tmp
+
+# Local release packs
+releases/
+

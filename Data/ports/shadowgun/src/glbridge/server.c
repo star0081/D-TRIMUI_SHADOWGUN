@@ -805,7 +805,8 @@ static void present_draw_fps(void)
     dh = 32;
     t = 4;
     gap = 6;
-    x = win_w - (dw * 3 + gap * 2) - 12;
+    /* Top-left: top-right sits under the TrimUI status icons / bezel. */
+    x = 12;
     y = 12;
     gl_y = win_h - y - dh;
     if (G.glIsEnabled)
@@ -898,6 +899,14 @@ static void present_swap(void)
     }
     if (G.glViewport)
         G.glViewport(0, 0, win_w, win_h);
+    if (present_letterbox && G.glClearColor && G.glClear) {
+        if (G.glColorMask)
+            G.glColorMask(1u, 1u, 1u, 1u);
+        G.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        if (G.glDisable)
+            G.glDisable(GL_SCISSOR_TEST);
+        G.glClear(GL_COLOR_BUFFER_BIT);
+    }
     if (blit)
         blit(0, 0, game_w, game_h, dx, dy, dx + dw, dy + dh, GL_COLOR_BUFFER_BIT,
              GL_NEAREST);
@@ -1133,14 +1142,14 @@ int main(void)
     if (eh)
         game_h = atoi(eh);
     if (game_w < 1)
-        game_w = 640;
+        game_w = 1280;
     if (game_h < 1)
-        game_h = 480;
+        game_h = 720;
     {
+        /* Full-bleed stretch by default so a 16:9 game FBO fills the panel.
+           TSPGL_PRESENT=letterbox adds side bars if needed. */
         const char *mode = getenv("TSPGL_PRESENT");
-#ifdef TSPGL_DEFAULT_LETTERBOX
-        present_letterbox = 1;
-#endif
+        present_letterbox = 0;
         if (mode != NULL) {
             if (strcmp(mode, "letterbox") == 0 || strcmp(mode, "fit") == 0)
                 present_letterbox = 1;

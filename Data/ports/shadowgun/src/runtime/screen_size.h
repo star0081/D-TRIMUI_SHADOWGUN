@@ -3,7 +3,8 @@
 
 #include <stdlib.h>
 
-/* Offscreen GLES size. R36S keeps 640x480 (Mali). TSP llvmpipe needs less. */
+/* Offscreen GLES size. Shadowgun's HUD was authored for a wide frame; 640x480
+   clipped the ammo counter. Default matches the TrimUI panel. */
 static inline int nfsmw_screen_width(void)
 {
     static int value;
@@ -13,7 +14,7 @@ static inline int nfsmw_screen_width(void)
     if (value != 0)
         return value;
     configured = getenv("NFSMW_WIDTH");
-    parsed = configured != NULL ? atoi(configured) : 640;
+    parsed = configured != NULL ? atoi(configured) : 1280;
     if (parsed < 160)
         parsed = 160;
     if (parsed > 1280)
@@ -31,7 +32,7 @@ static inline int nfsmw_screen_height(void)
     if (value != 0)
         return value;
     configured = getenv("NFSMW_HEIGHT");
-    parsed = configured != NULL ? atoi(configured) : 480;
+    parsed = configured != NULL ? atoi(configured) : 720;
     if (parsed < 120)
         parsed = 120;
     if (parsed > 720)
